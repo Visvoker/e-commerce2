@@ -11,7 +11,9 @@ const SetupPage = () => {
   const isOpen = useStoreModal((state) => state.isOpen);
 
   useEffect(() => {
-    onOpen();
+    if (!isOpen) {
+      onOpen();
+    }
   }, [isOpen, onOpen])
 
   return (

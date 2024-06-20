@@ -7,6 +7,7 @@ import { Heading } from "@/components/ui/heading"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { DataTable } from "@/components/ui/data-table"
+import { ApiList } from "@/components/ui/api-list"
 
 import { BillboardColumn, columns } from "./columns"
 
@@ -33,7 +34,10 @@ export const BillboardClient: React.FC<BillboardClientProps> = ({
         </Button>
       </div>
       <Separator />
-      <DataTable columns={columns} data={data} />
+      <DataTable searchKey="label" columns={columns} data={data} />
+      <Heading title="API" description="API calls for Billboards" />
+      <Separator />
+      <ApiList entityName="billboards" entityIdName="billboardId" />
     </>
   )
 }
